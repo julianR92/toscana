@@ -1,0 +1,200 @@
+<!--
+Autor:   Hugo Andres Pedroza Rodriguez
+Software: Sistema pra la administracion de vehiculos y rastreo
+Versión: 1.0:
+Tipo de proyecto: Comerial
+Todos los derechos reservados 2020
+@copyright
+-->
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Toscana App</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Expires" content="0"/>
+      <meta http-equiv="Pragma" content="no-cache"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+      <link rel="icon" type="image/png" href="Frame/img/LogoRiego.png">
+      <link rel="stylesheet" href="Frame/library/bower_components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="Frame/library/bower_components/Ionicons/css/ionicons.min.css">
+      <link rel="stylesheet" href="Frame/library/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+      <link rel="stylesheet" href="Frame/library/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="Frame/library/plugins/iCheck/all.css">
+      <link rel="stylesheet" href="Frame/styles/estilos.css">
+      <!--Estilos propios de la aplicacion-->
+      <link rel="stylesheet" href="Frame/library/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+      <link rel="stylesheet" href="Frame/library/plugins/timepicker/bootstrap-timepicker.min.css">
+      <link rel="stylesheet" href="Frame/library/bower_components/select2/dist/css/select2.min.css">
+      <link rel="stylesheet" href="Frame/library/dist/css/AdminLTE.min.css">
+      <link rel="stylesheet" href="Frame/library/dist/css/skins/_all-skins.min.css">
+</head>
+<style type="text/css">
+  @media only screen and (max-width: 600px) {
+ 
+
+  }
+
+  #InputLogin_dos {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+</style>
+<script type="text/javascript">
+    /*window.onload=function(){
+        Objeto=document.getElementsByTagName("a");
+          for(a=0;a<Objeto.length;a++){
+               Objeto[a].onclick=function(){
+               location.replace(this.href);
+                return false;
+               }
+           }
+    }*/
+
+    javascript:window.history.forward(1);
+        function deshabilitaRetroceso(){
+            window.location.hash="no-back-button";
+            window.location.hash="Again-No-back-button";//esta linea es necesaria para chrome
+            window.onhashchange=function(){window.location.hash="no-back-button";}
+        }
+</script>
+
+<body style="background-color:white;" onload="deshabilitaRetroceso()">
+<nav align="right" style="background-color: black; width:100%; height:50px; position: fixed;"><a style="font-size: 16px; color: #ffffff; padding-right: 20px;" href="../"><b>Regresar</b></a></nav>
+  <section class="content col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-top: 100px;">
+    <center>
+
+    <div class="box box-primary">
+      <form method="post" role="form" action="controlador/controlador.php">
+        <div align="center" id="box-header" class="box-header with-border bg-success collapsed-box-active">
+          <h3 class="box-title FuenteExtra" style="color: #fff;"><b>Inicio de sesion</b></h3>
+        </div>
+        <div style="background-color: #000000;" class="box-body">
+          
+          <div class="col-md-8" >
+            <div class="col-md-12" style="padding-right: 0px;">
+              <div class="form-group has-feedback">
+                <label class="input-control" for="SP00" style="font-family: 'Barlow',sans-serif; color: #fff;"><b>Usuario *</b></label>
+                <input style="border-radius: 4px;" type="text" class="form-control" name="SP00" id="InputLogin" required="required" onkeypress="return NumDoc(event)"><span style="color: #000;" class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              
+            </div>
+        
+            <div class="col-md-12" style="padding-right: 0px;">
+              <div class="form-group has-feedback">
+                <label class="input-control" for="SP01" style="font-family: 'Barlow', sans-serif;color: #fff;"><b>Contraseña *</b></label>
+                <input style="border-radius:4px;" type="password" class="form-control" name="SP01" required="required" id="InputLogin_dos" onload="ClearForm(this)"> <a href="#" id="Botonpass1" style="cursor: pointer; pointer-events: auto; color: royalblue" class="form-control-feedback"><span id="icon_uno" class="glyphicon glyphicon-eye-close"></span></a>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">          
+          <img src="../assets/img/toscana_circulo_3.png" style="width: 130px; height: 150px;">
+        </div>
+
+          <input type="hidden" id="Archivo" name="Archivo" value="Sesion">
+          <input type="hidden" id="Clase" name="Clase" value="Sesion">
+          <input type="hidden" id="Funcion" name="Funcion" value="Login">
+
+          <div style="padding-bottom: 20px; padding-top: 20px;" class="col-md-12">
+            <div class="col-md-8">
+               <div class="col-md-12">
+              <div class="form-group" align="left">
+                <button style="border-radius:4px;background-color:#f1f1f1; border-color:#f1f1f1;color:#000; height:40px;" type="submit" name="Boton" value="Boton" id="Boton" class="btn  btn-lg btn-primary btn-block btn-flat" onclick="this.value=''">
+                  <b style="font-family: 'Barlow', sans-serif;">Ingresar</b>
+                </button>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </form>
+   </div>
+ </center>
+
+</section>
+</body>
+</html>
+<script src="Frame/library/js/jquery.js"></script>
+<script src="Frame/library/js/bootstrap.min.js"></script>
+<script src="Frame/library/bower_components/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+  function Numeros(e){
+
+          key = e.keyCode || e.which;
+          tecla = String.fromCharCode(key).toLowerCase();
+          letras = "0123456789";
+          especiales = [8,37];
+          tecla_especial = false
+              for(var i in especiales){
+                  if(key == especiales[i]){
+                    tecla_especial = true;
+                  break;
+                    } 
+                }
+                               
+              if(letras.indexOf(tecla)==-1 && !tecla_especial)
+                return false;
+}
+
+   function NumDoc(n){
+
+          key = n.keyCode || n.which;
+          tecla = String.fromCharCode(key).toLowerCase();
+          numeros = "0123456789-ñÑ .";
+          especiales = [14,15,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,
+          84,85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,
+          110,111,112,113,114,115,116,117,118,119,120,121,122,130,160,161,162,163,164,165,];
+          tecla_especial = false
+              for(var i in especiales){
+                  if(key == especiales[i]){
+                    tecla_especial = true;
+                  break;
+                    } 
+                }
+                               
+              if(numeros.indexOf(tecla)==-1 && !tecla_especial)
+                return false;
+}
+
+
+ $(document).ready(function() {
+
+ $('#InputLogin').change(function(){
+
+        var input8 = document.getElementById('InputLogin').value;
+        var ValInput8 = input8.match(/^[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ .-]{5,15}$/);
+        if (ValInput8 == null) {
+          
+          
+        alert("No se permiten menos de cinco(5) dígitos ni más de quince(15) dígitos");
+          $('#InputLogin').focus();
+          $('#InputLogin').val('');
+
+        }             
+      });
+
+
+  $('#Botonpass1').click(function(){
+            var boton = document.getElementById("InputLogin_dos");
+            if(boton.type == 'password'){
+                $('#InputLogin_dos').attr('type', 'text');
+                $('#icon_uno').addClass('glyphicon-eye-open').removeClass('glyphicon-eye-close');
+
+            }else{
+               $('#InputLogin_dos').attr('type', 'password'); 
+               $('#icon_uno').addClass('glyphicon-eye-close').removeClass('glyphicon-eye-open');
+            }
+        })
+
+
+
+
+ });
+</script>

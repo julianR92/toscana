@@ -1,0 +1,9 @@
+AddType application/x-httpd-php .html
+AddType 'text/html; charset=UTF-8' html
+
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?ruta=$1
+
